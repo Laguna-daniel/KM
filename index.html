@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Glamping Paraíso Andino</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Fuentes -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital@1&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- OrbitControls -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <!-- GLTFLoader para cargar modelos .GLB -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+</head>
+
+
+<body>
+
+  <!-- =====================================================
+       INTERFAZ GLAMPING
+  ====================================================== -->
+
+  <div id="interfaz-glamping">
+
+    <!-- HEADER -->
+    <header>
+
+      <div class="logo">
+        Paraíso Andino
+      </div>
+
+      <nav>
+
+        <ul class="nav-links">
+
+          <li>
+            <a href="#" class="link-falso">
+              Cabañas
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="link-falso">
+              Experiencias
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </header>
+
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <h1>
+          Desconecta para conectar
+        </h1>
+
+        <p>
+          Experiencias de lujo en medio de la naturaleza.
+        </p>
+
+        <button
+          class="btn-reservar"
+          onclick="alert('¡Ups! Sistema de reservas en mantenimiento. Habla con nuestro agente virtual.')"
+        >
+          Ver disponibilidad
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         SERVICIOS
+    ================================================== -->
+
+    <section class="servicios">
+
+      <h2>
+        Nuestros Servicios
+      </h2>
+
+      <div class="grid-servicios">
+
+
+        <div class="servicio">
+
+          <span>
+            🔥
+          </span>
+
+          <h3>
+            Fogata Privada
+          </h3>
+
+          <p>
+            Espacios exclusivos para disfrutar de las estrellas
+            con malvaviscos.
+          </p>
+
+        </div>
+
+
+        <div class="servicio">
+
+          <span>
+            🛁
+          </span>
+
+          <h3>
+            Jacuzzi al aire libre
+          </h3>
+
+          <p>
+            Relajación total en medio de la naturaleza
+            con agua termal.
+          </p>
+
+        </div>
+
+
+        <div class="servicio">
+
+          <span>
+            🥐
+          </span>
+
+          <h3>
+            Desayuno Incluido
+          </h3>
+
+          <p>
+            Productos locales y frescos entregados
+            en tu cabaña cada mañana.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         GALERÍA
+    ================================================== -->
+
+    <section class="galeria">
+
+      <h2>
+        Conoce nuestras cabañas
+      </h2>
+
+
+      <div class="grid-imagenes">
+
+
+        <div class="card">
+
+          <img
+            src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Cabaña 1"
+          >
+
+          <h3>
+            Cabaña Domo
+          </h3>
+
+        </div>
+
+
+        <div class="card">
+
+          <img
+            src="https://images.pexels.com/photos/2422265/pexels-photo-2422265.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Interior"
+          >
+
+          <h3>
+            Interior Rústico
+          </h3>
+
+        </div>
+
+
+        <div class="card">
+
+          <img
+            src="https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Cabaña 2"
+          >
+
+          <h3>
+            Cabaña del Bosque
+          </h3>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         CHATBOT
+    ================================================== -->
+
+    <div id="chatbot-container">
+
+
+      <div id="chat-window" class="oculto">
+
+        <div class="chat-header">
+          Agente Andino 🤖
+        </div>
+
+
+        <div
+          class="chat-body"
+          id="chat-body"
+        >
+
+          <p class="bot-msg">
+            ¡Hola! ¿Te ayudo a reservar una cabaña o tienes alguna duda?
+          </p>
+
+        </div>
+
+
+        <div class="chat-input">
+
+          <input
+            type="text"
+            id="chat-input"
+            placeholder="Escribe aquí..."
+          >
+
+          <button id="btn-enviar-chat">
+            ➤
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <button id="btn-chatbot">
+        💬
+      </button>
+
+    </div>
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
+    <footer>
+
+      <p>
+        &copy; 2026 Glamping Paraíso Andino.
+        Todos los derechos reservados.
+      </p>
+
+
+      <button id="btn-cambio-interfaz">
+        [ cambio de interfaz ]
+      </button>
+
+    </footer>
+
+  </div>
+
+
+  <!-- =====================================================
+       CORTINAS DE TRANSICIÓN
+  ====================================================== -->
+
+  <div id="contenedor-cortinas">
+
+    <div class="cortina cortina-izquierda"></div>
+
+    <div class="cortina cortina-derecha"></div>
+
+  </div>
+
+
+  <!-- =====================================================
+       INTERFAZ DE LA CARTA
+  ====================================================== -->
+
+  <div id="interfaz-carta">
+
+
+    <div class="contenido-carta">
+
+
+      <!-- Imagen de la sorpresa -->
+
+      <img
+        src="imagenes/imagen_sorpresa.jpg.jpg"
+        alt="Detalle"
+        class="imagen-tierna"
+      >
+
+
+      <!-- Título -->
+
+      <h1>
+        ¡Feliz Día de Amor y Amistad!
+      </h1>
+
+
+      <!-- Mensaje inicial -->
+
+      <p>
+        Pensabas que solo te iba a mostrar una página de glamping,
+        ¿verdad?
+      </p>
+
+
+      <!-- =================================================
+           ROSA 3D
+      ================================================== -->
+
+      <div class="cuadro-rosas">
+
+        <!--
+          Three.js colocará aquí
+          el modelo 3D de la rosa
+        -->
+
+        <div id="canvas-3d-container"></div>
+
+
+        <p class="hint-3d">
+          Gira la escena
+        </p>
+
+      </div>
+
+
+      <!-- Mensaje personal -->
+
+      <p>
+        Aproveché la excusa del código para dejarte este detalle.
+        Me alegra mucho que volviéramos a hablar en estos días.
+      </p>
+
+
+      <p>
+        Espero que pases un día muy bonito.
+        Y sí, puse una cabrita, una nutria, uvas y estas rosas
+        digitales para ti. 😉
+      </p>
+
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <!-- Tu script debe ir DESPUÉS de GLTFLoader -->
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>
